@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:shrinkColumns="*">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/relativelay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="alegreya_bold"
+                android:gravity="start"
+                android:text="Aug"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/month"
+                android:layout_marginTop="10dp"
+                android:fontFamily="alegreya_bold"
+                android:gravity="start"
+                android:text="10"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/month"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/month"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="alegreya"
+                android:text="@string/categories"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/title"
+                android:layout_alignEnd="@+id/title"
+                android:layout_alignTop="@+id/year"
+                android:layout_below="@+id/title"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="alegreya_bold"
+                android:text="@string/categories"
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
+            <!--<ImageView-->
+                <!--android:id="@+id/image"-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_toEndOf="@+id/description"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:src="@drawable/ic_circle" />-->
+
+        </RelativeLayout>
+
+    </TableRow>
+</TableLayout>

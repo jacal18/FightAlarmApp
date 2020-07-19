@@ -1,0 +1,69 @@
+<ion-header>
+  <page-header></page-header>
+</ion-header>
+<ion-content
+  style="background:url(assets/imgs/9J5J9BeZQxCjoizyWJyx_categorybackground.png) no-repeat center;background-size:cover;background-color: white"
+  id="page17">
+  <ion-fab bottom right>
+    <button (click)="addCategory()" color="dark" ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+    <ion-grid class="search-grid">
+      <ion-row>
+        <ion-col class="col-12" col-12>
+          <form>
+            <ion-searchbar placeholder="Search" name="search" [(ngModel)]="searchInput"
+                           (ionInput)="onSearchInput($event)"></ion-searchbar>
+          </form>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="!categories || categories.length < 1">
+      <ion-grid>
+        <ion-row>
+          <ion-col justify-content-start>
+            <div>
+              <p>
+                <strong>
+                  You currently have no categories to display
+                </strong>
+              </p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 *ngFor="let category of categories; let k = index;">
+          <ion-row>
+            <ion-col class="card_side">
+              <ion-card class="cardmain parent">
+                <div class="child">
+                  <h5 id="categories-heading30" style="color:#234B60; text-align:center;">
+                    <b>{{ category.title }}</b>
+                  </h5>
+                </div>
+              </ion-card>
+
+            </ion-col>
+            <ion-col col-3>
+              <div class="buttons_side">
+                <button id="categories-button27" ion-button clear color="dark" (click)="updateCategory(category)">
+                  <ion-icon name="pencil" item-left></ion-icon>
+                </button>
+                <button id="categories-button28" ion-button clear color="danger" (click)="deleteCategory(category, k)">
+                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                </button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())" *ngIf="categories && categories.length < count">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

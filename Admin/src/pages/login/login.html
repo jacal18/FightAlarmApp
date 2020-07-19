@@ -1,0 +1,22 @@
+<ion-content padding style="background:url(assets/imgs/IgMqvuswRQyiCJKtuVdv_login.png) no-repeat center;background-size:cover; background-color: white;" id="page3">
+  <div class="spacer" style="width:300px;height:140px;" id="login-spacer1"></div>
+  <h1 id="login-heading10" style="color:#FFFFFF;text-align:center;">
+    Login
+  </h1>
+  <div class="spacer" style="width:300px;height:52px;" id="login-spacer13"></div>
+  <form [formGroup]="loginForm" (submit)="loginUser()">
+    <ion-item>
+      <ion-label stacked>Username/Email Address</ion-label>
+      <ion-input #email formControlName="email" type="email" placeholder="Your email address"
+                  [class.invalid]="!loginForm.controls.email.valid"></ion-input>
+    </ion-item>
+    <ion-item id="login-input10">
+      <ion-label stacked>Password</ion-label>
+      <ion-input #password formControlName="password" type="password" placeholder="Your password"
+                 [class.invalid]="!loginForm.controls.password.valid"></ion-input>
+    </ion-item>
+    <button ion-button color="secondary" block>
+      Sign In
+    </button>
+  </form>
+</ion-content>

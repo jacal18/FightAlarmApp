@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{modal_name}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="cancel()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page14">
+  <form [formGroup]="eventForm">
+    <ion-item>
+      <ion-label stacked>Title(required)</ion-label>
+      <ion-input type="text" placeholder="Title(required)" name="title" #title formControlName="title"
+                 [class.invalid]="!eventForm.controls.title.valid"></ion-input>
+    </ion-item>
+    <h4 id="addEvents-heading14" style="color:#011D56;">
+      Player 1<span class="required">*</span>
+    </h4>
+    <ion-item>
+      <ion-label stacked>First Name</ion-label>
+      <ion-input type="text" placeholder="First Name" name="player1fname" #player1fname formControlName="player1fname"
+                 [class.invalid]="!eventForm.controls.player1fname.valid"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Last Name</ion-label>
+      <ion-input type="text" placeholder="Last Name" name="player1lname" #player1lname formControlName="player1lname"
+                 [class.invalid]="!eventForm.controls.player1lname.valid"></ion-input>
+    </ion-item>
+    <h4 id="addEvents-heading15" style="color:#011D56;">
+      Player 2<span class="required">*</span>
+    </h4>
+    <ion-item>
+      <ion-label stacked>First Name</ion-label>
+      <ion-input type="text" placeholder="First Name" name="player2fname" #player2fname formControlName="player2fname"
+                 [class.invalid]="!eventForm.controls.player2fname.valid"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Last Name</ion-label>
+      <ion-input type="text" placeholder="Last Name" name="player2lname" #player2lname formControlName="player2lname"
+                 [class.invalid]="!eventForm.controls.player2lname.valid"></ion-input>
+    </ion-item>
+  </form>
+  <br>
+  <ion-row>
+    <h5 id="addEvents-heading17" style="color:#011D56;">
+      Category<span class="required">*</span>
+    </h5>
+    <ion-row>
+      <ion-col text-center col-8>
+        <ion-scroll scrollX="true">
+          <ion-row nowrap>
+            <div *ngFor="let category of categories">
+              <ion-checkbox [(ngModel)]="category.checked" color="dark" [disabled]="event && event.now_showing"></ion-checkbox>
+              <img class="categories" src="{{ category.imageURL }}" style="margin-right: 10px;">
+              <figcaption> {{category.title}} </figcaption>
+            </div>
+          </ion-row>
+        </ion-scroll>
+      </ion-col>
+      <ion-col text-right col-4>
+        <button ion-button clear color="dark" type="button" item-right (click)="addCategory()"
+                style="width: 60px;height: 60px; font-size: 40px; margin-top: 10px; margin-right: -20px;" [disabled]="event && event.now_showing">
+          <ion-icon name="add-circle"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+  <button id="addEvents-button16" ion-button color="main" block (click)="saveEvent()" [disabled]="event && event.now_showing">
+    {{ type && type === "update" && duplicate === false ? 'Update' : 'Save' }}
+  </button>
+  <button id="addEvents-button18" ion-button color="danger" block (click)="cancel()">
+    Cancel
+  </button>
+</ion-content>

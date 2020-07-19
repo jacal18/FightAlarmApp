@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "216196455807",
+    "firebase_url": "https://fightalarm-31326.firebaseio.com",
+    "project_id": "fightalarm-31326",
+    "storage_bucket": "fightalarm-31326.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216196455807:android:1252588e0dd20a87",
+        "android_client_info": {
+          "package_name": "com.fightalarm.alarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216196455807-lh1tl0hfk4hqbks936t096qth990opdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy7st4AojJE0cW7bKKJJd-eqj5E7LY9zY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

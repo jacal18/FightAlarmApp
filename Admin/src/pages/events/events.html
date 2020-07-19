@@ -1,0 +1,80 @@
+<ion-header>
+  <page-header></page-header>
+</ion-header>
+
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<ion-content style="background:url(assets/imgs/9J5J9BeZQxCjoizyWJyx_categorybackground.png) no-repeat center;background-size:cover;background-color: white;" >
+  <ion-fab bottom right>
+    <button color="dark" (click)="addEvent()" ion-fab style="border-radius: 50%;">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="col-9">
+        <form>
+          <ion-searchbar placeholder="Search" name="search" [(ngModel)]="searchInput" (ionInput)="onSearchInput($event)"></ion-searchbar>
+        </form>
+      </ion-col>
+      <ion-col class="col-3 text-center">
+        <p>Filter</p>
+        <p style="margin-top: -7px;"><ion-icon name="equalizer" (click)="showFilter()"></ion-icon><span (click)="getEvents()" *ngIf="filtered">
+        <ion-icon name="close" color="main"></ion-icon></span></p>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="!events || events.length < 1">
+    <ion-grid>
+      <ion-row>
+        <ion-col justify-content-start>
+          <div>
+            <p>
+              <strong>
+                You currently have no events to display
+              </strong>
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+
+  <ion-list class="event-list item-list">
+    <ion-item-sliding *ngFor="let event of events; let k = index;">
+      <ion-item color="none" (click)="updateEvent(event)" id="events-list-item13">
+        <img src="assets/imgs/events-combined-shape@2x.png" class="combinedshape"/>
+        <div class="row">
+          <div class="col-4" text-left>
+            <span class="smalltext1">Subscribers</span>
+            <img src="assets/imgs/events-oval 1@2x.png" class="oval"/>
+            <div class="a101">
+              {{ event.subscribers ? event.subscribers : 0 }}
+            </div>
+          </div>
+          <div class="col-8 info_col" text-left>
+            <h3>{{ event.title }}</h3>
+            <p><i>{{ event.player1fname }} vs {{ event.player2fname }}</i></p>
+            <button ion-button color="secondary" style="height: 45px;max-width: 100%; width: 100%" *ngIf="event.now_showing" (click)="stopTimer(event)">
+              Stop Now Showing
+            </button>
+            <button ion-button color="secondary" style="height: 45px;max-width: 100%; width: 100%" *ngIf="!event.now_showing " (click)="presentPrompt(event)">
+              Trigger Alarm
+            </button>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="main" (click)="updateEvent(event)">
+          <ion-icon name="pencil-white" item-left></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteEvent(event, k)">
+          <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())" *ngIf="events && events.length < count">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

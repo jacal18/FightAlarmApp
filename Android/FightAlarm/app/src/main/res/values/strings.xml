@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">FightAlarm</string>
+    <string name="title_home">Home</string>
+    <string name="title_events">Events</string>
+    <string name="title_schedules">My Schedules</string>
+    <string name="title_about">About</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="no_data">No Event Currently Listed.</string>
+    <string name="startdate">Start Date</string>
+    <string name="enddate">End Date</string>
+    <string name="up_next">Up Next</string>
+    <string name="recommendations">Recommendations</string>
+    <string name="categories">Categories</string>
+    <string name="daterange">Select a Date Range</string>
+    <string name="sort">Sort By</string>
+    <string name="filtersort">Filter/Sort</string>
+    <string name="filters">Filters</string>
+    <string name="title_activity_notification">NotificationActivity</string>
+    <string name="search">Search</string>
+    <string name="nodays">No of days left</string>
+    <string name="initialno">0</string>
+    <string name="endno">0</string>
+    <string name="distance">Distance</string>
+    <string name="directions">Currently showing</string>
+    <string name="showing">Currently showing</string>
+    <string name="subscriber">Subscribers</string>
+    <string name="subscribe">Set Alarm</string>
+    <string name="unsubscribe">Alarm Set</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur ornare augue, ut dignissim arcu finibus sed. Proin pellentesque velit et nibh suscipit feugiat. Curabitur quis euismod nisi, nec feugiat sapien. Ut venenatis est justo, ultricies luctus dolor consectetur non. Praesent aliquet mi quam, quis suscipit orci blandit in. Ut nec nibh efficitur, fermentum ipsum sit amet, aliquet lacus. Curabitur lectus erat, iaculis sed diam non, ornare tristique nisi.</string>
+</resources>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FilterActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relativelay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/sort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alegreya_bold"
+                android:text="@string/sort"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/sortdropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sort"
+                android:theme="@style/SeekBarColor" />
+
+            <TextView
+                android:id="@+id/filters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sortdropdown"
+                android:fontFamily="@font/alegreya_bold"
+                android:text="@string/filters"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/categorytitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/filters"
+                android:fontFamily="@font/alegreya_bold"
+                android:text="@string/categories"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="15sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/categoryList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/categorytitle"
+                android:minHeight="20dp" />
+
+
+            <TextView
+                android:id="@+id/daterangetitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/categoryList"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/alegreya_bold"
+                android:text="@string/daterange"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/startdatetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/daterangetitle"
+                android:fontFamily="@font/alegreya_bold"
+                android:gravity="start"
+                android:text="@string/startdate"
+                android:textAlignment="textStart"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/startdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startdatetitle"
+                android:drawableEnd="@drawable/ic_event_black_24dp"
+                android:editable="false"
+                android:ems="9"
+                android:hint="25 Sept 2018"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/enddatetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/startdatetitle"
+                android:layout_toEndOf="@+id/startdatetitle"
+                android:fontFamily="@font/alegreya_bold"
+                android:gravity="end"
+                android:text="@string/enddate"
+                android:textAlignment="textEnd"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/enddate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignEnd="@+id/enddatetitle"
+                android:layout_alignTop="@+id/startdate"
+                android:layout_below="@+id/enddatetitle"
+                android:layout_toEndOf="@+id/startdate"
+                android:drawableEnd="@drawable/ic_event_black_24dp"
+                android:editable="false"
+                android:ems="9"
+                android:hint="29 Sept 2018"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/subscribersleft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startdate"
+                android:fontFamily="@font/alegreya_bold"
+                android:text="@string/initialno"
+                android:layout_alignParentStart="true"
+                android:layout_alignStart="@+id/subscribers"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/subscribers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startdate"
+                android:fontFamily="@font/alegreya_bold"
+                android:gravity="center"
+                android:text="@string/subscriber"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/subscribersright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startdate"
+                android:fontFamily="@font/alegreya_bold"
+                android:layout_alignEnd="@+id/subscribers"
+                android:layout_alignParentEnd="true"
+                android:text="@string/endno"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="15sp" />
+
+
+            <com.edmodo.rangebar.RangeBar
+                android:id="@+id/subscribersrange"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/subscribers"
+                android:max="100"
+                android:progress="0"
+                app:tickCount="100"
+                />
+
+
+            <TextView
+                android:id="@+id/dayslefttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subscribersrange"
+                android:fontFamily="@font/alegreya_bold"
+                android:text="@string/initialno"
+                android:layout_alignParentStart="true"
+                android:layout_alignStart="@+id/daystitle"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/daystitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subscribersrange"
+                android:fontFamily="@font/alegreya_bold"
+                android:gravity="center"
+                android:text="@string/nodays"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/daysrighttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/subscribersrange"
+                android:fontFamily="@font/alegreya_bold"
+                android:layout_alignEnd="@+id/daystitle"
+                android:layout_alignParentEnd="true"
+                android:text="@string/endno"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="15sp" />
+
+            <com.edmodo.rangebar.RangeBar
+                android:id="@+id/daysrange"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/daystitle"
+                android:max="100"
+                android:progress="0"
+                app:tickCount="100"
+                />
+
+
+            <Button
+                android:id="@+id/applybutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/daysrange"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@color/green"
+                android:maxHeight="150dp"
+                android:text="@string/apply"
+                android:textColor="@color/icon"
+                app:layout_gravity="bottom" />
+
+            <Button
+                android:id="@+id/cancelbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/applybutton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@color/red"
+                android:maxHeight="150dp"
+                android:text="@string/cancel"
+                android:textColor="@color/icon"
+                app:layout_gravity="bottom" />
+
+        </RelativeLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

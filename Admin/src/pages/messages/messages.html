@@ -1,0 +1,51 @@
+<ion-header>
+  <page-header></page-header>
+</ion-header>
+
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<ion-content
+  style="background:url(assets/imgs/9J5J9BeZQxCjoizyWJyx_categorybackground.png) no-repeat center;background-size:cover;background-color: white;">
+  <ion-grid *ngIf="!messages || messages.length < 1">
+    <ion-grid>
+      <ion-row>
+        <ion-col justify-content-start>
+          <div>
+            <p>
+              <strong>
+                You currently have no messages to display
+              </strong>
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+<br>
+  <ion-list class="event-list item-list">
+    <ion-item-sliding *ngFor="let message of messages; let k = index;">
+      <ion-item color="none">
+        <img src="assets/imgs/events-combined-shape@2x.png" class="combinedshapesmall"/>
+        <div class="row">
+          <div class="col-8 left_user" text-left>
+            <div style="font-size: 13px; font-weight: bold;"> {{ message.name }}({{message.email}})</div>
+            <p style="font-size: 16px;">
+              <i>{{ message.message }}</i>
+            </p>
+          </div>
+          <div class="col-4 not_right_user" text-right style="text-align: right;">
+            <p>{{ message.creationdate | extractDate: 'month' }} {{ message.creationdate | extractDate: 'day' }}</p>
+            <p style="font-weight: bold;">{{ message.creationdate | extractDate: 'year' }}</p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deleteMessage(message)">
+          <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())" *ngIf="messages && messages.length < count">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

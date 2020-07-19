@@ -1,0 +1,132 @@
+<ion-header>
+  <page-header></page-header>
+</ion-header>
+
+
+<ion-content padding id="page12">
+  <ion-fab bottom right>
+    <button color="dark" ion-fab (click)="addEvent()" style="border-radius: 50%;">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-grid>
+    <ion-row class="home_heading">
+      <ion-col text-start>
+        <h1 id="home-heading24" style="color:#EB0808;font-weight:600;">
+          {{counts.subscriber}}
+        </h1>
+        <p style="color:#011D56;">
+          <strong>
+            subscribers
+          </strong>
+        </p>
+      </ion-col>
+      <ion-col text-center>
+        <h1 id="home-heading25" style="color:#EB0808;font-weight:600;">
+          {{counts.category}}
+        </h1>
+        <p style="color:#011D56;">
+          <strong>
+            category
+          </strong>
+        </p>
+      </ion-col>
+      <ion-col text-end>
+        <h1 id="home-heading26" style="color:#EB0808;font-weight:600;">
+          {{counts.event}}
+        </h1>
+        <p style="color:#011D56;">
+          <strong>
+            events
+          </strong>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <hr>
+  <h2>
+    <b>Events</b>
+  </h2>
+  <hr>
+  <ion-grid *ngIf="!events || events.length < 1">
+
+    <ion-row>
+      <ion-col justify-content-start>
+        <div>
+          <p>
+            <strong>
+              You currently have no events to display
+            </strong>
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="events && events.length > 0">
+    <ion-row>
+      <ion-col class="col-9 text-left">
+        <form>
+          <ion-searchbar placeholder="Search" name="search" [(ngModel)]="searchInput"
+                         (ionInput)="onSearchInput($event)"></ion-searchbar>
+        </form>
+      </ion-col>
+      <ion-col class="col-3 text-center">
+        <p>Filter</p>
+        <p style="margin-top: -7px;">
+          <ion-icon name="equalizer" (click)="showFilter()"></ion-icon>
+          <span (click)="getEvents()" *ngIf="filtered">
+        <ion-icon name="close" color="main"></ion-icon></span></p>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list class="event-list item-list">
+    <ion-item-sliding *ngFor="let event of events; let k = index;">
+      <ion-item color="none" id="events-list-item13">
+        <img src="assets/imgs/events-combined-shape@2x.png" class="combinedshape"  (click)="updateEvent(event, false)"/>
+        <div class="row">
+          <div class="col-4" text-left  (click)="updateEvent(event, false)">
+            <span class="smalltext1">Subscribers</span>
+            <img src="assets/imgs/events-oval 1@2x.png" class="oval"/>
+            <div class="a101">
+              {{ event.subscribers ? event.subscribers : 0 }}
+            </div>
+          </div>
+          <div class="col-8 info_col" text-left>
+            <h3  (click)="updateEvent(event, false)">{{ event.title }}</h3>
+            <p  (click)="updateEvent(event, false)"><i>{{ event.player1fname }} vs {{ event.player2fname }}</i></p>
+            <!--<button ion-button color="secondary" style="height: 45px;max-width: 100%; width: 100%"-->
+                    <!--*ngIf="event.now_showing" (click)="stopTimer(event)">-->
+              <!--Re-Trigger Alarm-->
+            <!--</button>-->
+            <button ion-button color="secondary" style="height: 45px;max-width: 100%; width: 100%"
+                    (click)="presentPrompt(event)">
+             <span *ngIf="!event.now_showing" > Trigger Alarm</span> <span *ngIf="event.now_showing " > Re-Trigger Alarm</span>
+            </button>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" *ngIf="event.now_showing" (click)="stopTimer(event)">
+          <ion-icon name="close-circle" item-left></ion-icon>
+        </button>
+        <button ion-button color="dark" (click)="updateEvent(event, true)">
+          <ion-icon name="copy" item-left></ion-icon>
+        </button>
+        <button ion-button color="main" (click)="updateEvent(event, false)">
+          <ion-icon name="pencil-white" item-left></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteEvent(event, k)">
+          <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())" *ngIf="events && events.length < count">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

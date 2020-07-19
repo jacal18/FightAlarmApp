@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/notification_nav"
+        android:title="Notifications"
+        android:icon="@drawable/ic_notifications_gold_24dp"
+        app:showAsAction="always"
+        android:orderInCategory="0"
+        android:top="0dp" android:bottom="0dp"
+        android:right="0dp" android:left="0dp"
+        app:actionLayout="@layout/badgelayout"/>
+
+    <!--android:icon="@drawable/ic_don"-->
+</menu>

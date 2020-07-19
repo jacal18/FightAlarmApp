@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.HomeActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/relativelay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alegreya_bold"
+                android:text="@string/categories"
+                android:textColor="@color/backgroundDarkerText"
+                android:layout_marginTop="10dp"
+                android:textSize="24sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/categoryList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/categories"
+                android:layout_marginTop="10dp"
+                android:minHeight="50dp" />
+
+
+            <TextView
+                android:id="@+id/events"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/categoryList"
+                android:fontFamily="@font/alegreya_bold"
+                android:text="@string/title_events"
+                android:textColor="@color/backgroundDarkerText"
+                android:layout_marginTop="10dp"
+                android:textSize="24sp" />
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/searchText"
+                android:layout_width="match_parent"
+                android:layout_below="@id/events"
+                android:layout_height="wrap_content"
+                android:iconifiedByDefault="false"
+                android:layout_alignStart="@+id/events"
+                android:layout_alignEnd="@+id/events"
+                android:queryHint="@string/search"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/search"/>
+
+
+            <ListView
+                android:id="@+id/eventListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchText"
+                android:layout_marginTop="5dp"
+                android:scrollbars="none"/>
+            <TextView
+                android:id="@+id/no_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchText"
+                android:fontFamily="@font/alegreya_bold"
+                android:text="@string/no_data"
+                android:textColor="@color/backgroundDarkerText"
+                android:textAlignment="center"
+                android:layout_margin="10dp"
+                android:layout_marginTop="30dp"
+                android:textSize="15sp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

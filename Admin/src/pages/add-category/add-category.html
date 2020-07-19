@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{modal_name}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="cancel()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page9">
+  <form [formGroup]="categoryForm">
+    <ion-item id="addCategory-input12">
+      <ion-label stacked>Title(required)</ion-label>
+      <ion-input type="text" placeholder="Title(required)" name="categorytitle" #title formControlName="title"
+                 [class.invalid]="!categoryForm.controls.title.valid">></ion-input>
+    </ion-item>
+    <ion-item id="addCategory-input13">
+      <ion-label stacked>Description(required)</ion-label>
+      <ion-input type="text" placeholder="Description(required)" name="description" #description formControlName="description"
+                 [class.invalid]="!categoryForm.controls.description.valid">></ion-input>
+    </ion-item>
+  </form>
+  <!--<ion-row class="image_selection">-->
+    <!--<ion-col  col-6>-->
+      <!--<button ion-button color="primary" block (click)="getImage()">-->
+        <!--Select Image-->
+      <!--</button>-->
+    <!--</ion-col>-->
+    <!--<ion-col  col-6 *ngIf="image && image.data">-->
+      <!--<img class="add_image" src="{{ image.data }}" >-->
+    <!--</ion-col>-->
+  <!--</ion-row>-->
+  <button id="addCategory-button12" ion-button color="main" block (click)="saveCategory()">
+    Save
+  </button>
+  <button id="addCategory-button13" ion-button color="danger" block (click)="cancel()">
+    Cancel
+  </button>
+</ion-content>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>216196455807-r41ufev7b3r1fgokcb2k1ts4n8f09un8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.216196455807-r41ufev7b3r1fgokcb2k1ts4n8f09un8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCsxoWG7w41lHiwLpramRA2x_3KoDgD7hI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>216196455807</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.fightalarm.fightalarm.users</string>
+	<key>PROJECT_ID</key>
+	<string>fightalarm-31326</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fightalarm-31326.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:216196455807:ios:917602e7aa2383b0</string>
+	<key>DATABASE_URL</key>
+	<string>https://fightalarm-31326.firebaseio.com</string>
+</dict>
+</plist>

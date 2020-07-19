@@ -1,0 +1,264 @@
+// http://ionicframework.com/docs/v2/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// workaround for https://github.com/ionic-team/ionic/issues/13294
+// probably breaks iPhone X support
+
+
+.vertical-align-content > * {
+  display: flex !important;
+  align-content: center !important;
+  align-items: center !important;
+}
+
+.combinedshape {
+  background-color: rgba(255, 255, 255, 0.0);
+  top: 26px;
+  height: 75px;
+  //width: 53px;
+  position: absolute;
+  margin: 10px 0 0 0;
+  left: 0px;
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+  transform: rotate(0deg);
+}
+
+.combinedshapesmall {
+  background-color: rgba(255, 255, 255, 0.0);
+  top: -2px;
+  height: 60px;
+  //width: 53px;
+  position: absolute;
+  margin: 10px 0 0 0;
+  left: 0px;
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+  transform: rotate(0deg);
+}
+
+.left_user div {
+  font-family: "PingFangSC-Semibold", Helvetica, Arial, serif;
+  color: rgba(40, 40, 40, 1.0);
+  font-size: 20px;
+}
+
+.left_user p {
+  font-family: "PingFangSC-Regular", Helvetica, Arial, serif;
+  color: rgba(40, 40, 40, 1.0);
+}
+
+.right_user div {
+  font-family: "PingFangSC-Semibold", Helvetica, Arial, serif;
+  color: rgba(241, 71, 101, 1.0);
+  font-size: 20px;
+}
+
+.right_user p {
+  font-family: "PingFangSC-Semibold", Helvetica, Arial, serif;
+  color: rgba(8, 7, 7, 1.0);
+}
+
+.not_right_user p {
+  font-family: "PingFangSC-Semibold", Helvetica, Arial, serif;
+  color: rgba(40, 40, 40, 1.0);
+  font-size: 13px;
+}
+
+.header_text {
+
+  font-family: "PingFangSC-Semibold", Helvetica, Arial, serif;
+  color: rgba(51, 70, 80, 1.0);
+  font-size: 40px;
+}
+
+ion-header ion-icon.back-button-icon.icon {
+  color: map-get($colors, dark);
+}
+
+ion-header span.back-button-text {
+  color: map-get($colors, dark);
+}
+
+.item-list {
+  margin-top: -15px;
+}
+
+button {
+  ion-badge {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    border-radius: 50%;
+    opacity: 0.9;
+
+    & ~ ion-icon {
+      margin-right: 1.3rem;
+    }
+  }
+}
+
+//.search-grid {
+//  margin-left: 10px;
+//  margin-right: 10px;
+//}
+
+.filter-search {
+  margin-top: -17px;
+}
+
+.cardmain {
+  border-radius: 20px;
+  padding: 15px;
+  height: auto;
+  width: auto;
+}
+
+.buttons_side {
+  margin-top: 0px;
+  margin-left: -30px;
+}
+
+.buttons_side button {
+  margin-top: 0px;
+}
+
+.card_side {
+  margin-left: 10px;
+}
+
+.card_side h5 {
+  font-size: 12px;
+}
+
+ion-item.item.item-block.item-ios.item-input.item-label-stacked {
+  color: white;
+  background: none;
+  padding-left: 0px;
+}
+
+.add_image {
+  width: 160px;
+  height: 160px;
+  margin: 15px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.image_selection {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.ion-md-category {
+  max-width: 26px !important;
+  content: url("../assets/svg/category.svg") !important;
+
+}
+
+.ion-md-tv {
+  max-width: 26px !important;
+  content: url("../assets/svg/tv.svg") !important;
+}
+
+.ion-ios-category {
+  max-width: 26px !important;
+  content: url("../assets/svg/category.svg") !important;
+}
+
+.ion-ios-tv {
+  max-width: 26px !important;
+  content: url("../assets/svg/tv.svg") !important;
+}
+
+
+.ion-md-pencil {
+  max-width: 16px !important;
+  content: url("../assets/svg/pencil.svg") !important;
+
+}
+
+.ion-ios-pencil {
+  max-width: 16px !important;
+  content: url("../assets/svg/pencil.svg") !important;
+}
+
+.ion-md-pencil-white {
+  max-width: 16px !important;
+  content: url("../assets/imgs/pencil-white.png") !important;
+
+}
+
+.ion-ios-pencil-white {
+  max-width: 16px !important;
+  content: url("../assets/imgs/pencil-white.png") !important;
+}
+
+.ion-ios-group {
+  max-width: 26px !important;
+  content: url("../assets/svg/group.svg") !important;
+}
+
+.ion-md-group {
+  max-width: 26px !important;
+  content: url("../assets/svg/group.svg") !important;
+}
+
+.ion-ios-equalizer {
+  max-width: 26px !important;
+  content: url("../assets/svg/equalizer.svg") !important;
+}
+
+.ion-md-equalizer {
+  max-width: 26px !important;
+  content: url("../assets/svg/equalizer.svg") !important;
+}
+
+input.text-input.text-input-ios {
+  color: black;
+}
+
+.event-list {
+  border-bottom: #878383 solid 1px;
+}
+
+.info_col {
+  left: -10px;
+}
+
+.info_col p{
+  font-family: "Athelas-Italic", Helvetica, Arial, serif;
+  font-size: 17px;
+  text-align: left;
+}
+
+.info_col h3{
+  font-family: "ArialRoundedMTBold", Helvetica, Arial, serif;
+  font-size: 20.0px;
+}
+
+.info_col button{
+  font-family: "Athelas-Bold", Helvetica, Arial, serif;
+  width: 100%;
+  min-width: 100px;
+}
+
+
+.required{
+  color: red;
+}

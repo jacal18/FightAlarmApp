@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="dark"></ion-icon>
+    </button>
+    <ion-title>
+      Subscribers
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button class="header_text" style="font-size: 40px;">
+        {{ count }}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<ion-content id="page15">
+  <ion-grid class="search-grid">
+    <ion-row>
+      <ion-col col-12>
+        <form id="events-form12">
+          <ion-searchbar placeholder="Search" name="search" [(ngModel)]="searchInput" (ionInput)="onSearchInput($event)"></ion-searchbar>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="!subscribers || subscribers.length < 1">
+    <ion-grid>
+      <ion-row>
+        <ion-col justify-content-start>
+          <div>
+            <p>
+              <strong>
+                You currently have no subscribers to display
+              </strong>
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+  <ion-list class="item-list">
+    <ion-item-sliding>
+      <ion-item color="none" class="UsersInfo" *ngFor="let subscriber of subscribers;">
+        <img src="assets/imgs/events-combined-shape@2x.png" class="combinedshapesmall"/>
+        <div class="row">
+          <div class="col-8 left_user" text-left>
+            <div>{{ subscriber.email }}</div>
+            <p>
+              <b>Joined:</b> {{subscriber.joineddate | extractDate: "month"}} {{subscriber.joineddate | extractDate: "day"}} {{subscriber.joineddate | extractDate: "year"}}
+            </p>
+          </div>
+          <div class="col-4 right_user" text-right style="text-align: right;">
+            <div>
+              {{ subscriber.subscriptions }}
+            </div>
+            <p style="font-size: x-small;">Subscription(s)</p>
+          </div>
+        </div>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())" *ngIf="subscribers && subscribers.length < count">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

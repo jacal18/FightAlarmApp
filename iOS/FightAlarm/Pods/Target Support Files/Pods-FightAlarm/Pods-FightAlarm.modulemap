@@ -1,0 +1,6 @@
+framework module Pods_FightAlarm {
+  umbrella header "Pods-FightAlarm-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+
+        <RelativeLayout
+            android:id="@+id/relativegrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/alegreya_bold"
+                android:gravity="center_vertical"
+                android:text="Loading"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold|italic"
+                app:layout_gravity="center" />
+
+            <RelativeLayout
+                android:id="@+id/relativegrid1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:padding="10dp">
+
+
+
+                <TextView
+                    android:id="@+id/fname1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_bold"
+                    android:textColor="@color/backgroundDarkerText"
+                    android:textAlignment="textStart"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/lname1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/fname1"
+                    android:layout_below="@id/fname1"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alegreya_bold"
+                    android:textColor="@color/backgroundDarkerText"
+                    android:text="Loading"
+                    android:textAlignment="textStart"
+                    android:textSize="20dp"/>
+
+
+                <TextView
+                    android:id="@+id/vxText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="vs"
+                    android:textAlignment="center"
+                    android:background="@drawable/rectangle_button_dark"
+                    android:textColor="@color/icon"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="10dp"/>
+
+
+                <TextView
+                    android:id="@+id/fname2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/fname1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@id/vxText"
+                    android:maxWidth="150dp"
+                    android:text="Loading"
+                    android:textSize="20dp"
+                    app:layout_gravity="right"
+                    android:fontFamily="@font/alegreya_bold"
+                    android:textColor="@color/backgroundDarkerText"
+                    android:textAlignment="textEnd" />
+
+                <TextView
+                    android:id="@+id/lname2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/lname1"
+                    android:layout_alignBottom="@id/lname1"
+                    android:layout_toEndOf="@id/vxText"
+                    android:layout_alignRight="@id/fname2"
+                    android:layout_below="@id/fname2"
+                    android:maxWidth="150dp"
+                    android:text="Loading"
+                    android:fontFamily="@font/alegreya_bold"
+                    android:textColor="@color/backgroundDarkerText"
+                    android:textSize="20dp"
+                    app:layout_gravity="right"
+                    android:textAlignment="textEnd" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/subscribebutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativegrid1"
+                android:background="@drawable/rectangle_button"
+                android:text="@string/subscribe"
+                android:textColor="@color/icon"
+                android:maxHeight="150dp"
+                app:layout_column="2"
+                app:layout_gravity="right"/>
+        </RelativeLayout>
+
+
+        <!-- Your item contents -->
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="140dp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/recCard"
+        android:layout_width="300dp"
+        android:layout_height="140dp"
+        android:layout_margin="5dp">
+
+
+        <RelativeLayout
+            android:id="@+id/relativegrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/background_day_selected"
+                android:layout_alignParentStart="true"/>
+
+            <RelativeLayout
+                android:id="@+id/relativegrid1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/imageView"
+                android:padding="10dp">
+
+
+
+                <TextView
+                    android:id="@+id/fname1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_bold"
+                    android:textColor="@color/backgroundDarkerText"
+                    android:text="Trik"
+                    android:textAlignment="textStart"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/vxText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="vs"
+                    app:layout_gravity="center"
+                    android:layout_below="@+id/fname1"
+                    android:textColor="@color/backgroundDarkerText"
+                    android:textAlignment="textStart"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:id="@+id/fname2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/fname1"
+                    android:layout_below="@id/vxText"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alegreya_bold"
+                    android:textColor="@color/backgroundDarkerText"
+                    android:text="Transm"
+                    android:textAlignment="textStart"
+                    android:textSize="20dp"/>
+
+
+
+                <TextView
+                    android:id="@+id/state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trik"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    app:layout_gravity="center"
+                    android:fontFamily="@font/alegreya_bold"
+                    android:textColor="@color/backgroundDarkerText" />
+
+                <TextView
+                    android:id="@+id/country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/fname2"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/alegreya_bold"
+                    android:text="Tran"
+                    android:textColor="@color/backgroundDarkerText"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/schedule"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_alarm"
+                    android:gravity="end"
+                    app:layout_gravity="end" />
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/alegreya_bold"
+                android:layout_below="@+id/relativegrid1"
+                android:text="Trans"
+                android:textColor="@color/backgroundDarkerText"
+                android:textSize="13dp"
+                android:textAlignment="center"
+                app:layout_gravity="center" />
+        </RelativeLayout>
+
+
+        <!-- Your item contents -->
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

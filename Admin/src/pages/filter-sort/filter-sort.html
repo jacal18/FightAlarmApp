@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Filter/Sort
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only end (click)="dismissModal()">
+        <ion-icon name="close" color="main"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page13">
+  <h4 id="filterSort-heading8" style="color:#000000;">
+    Sort By
+  </h4>
+  <form id="filterSort-form14">
+    <ion-item id="filterSort-select3">
+      <ion-label stacked>Fields</ion-label>
+      <ion-select name="sortby" [(ngModel)]="sortvalue">
+        <ion-option value="all">
+          All
+        </ion-option>
+        <ion-option value="title">
+          Title
+        </ion-option>
+        <ion-option value="name">
+          Name
+        </ion-option>
+        <ion-option></ion-option>
+      </ion-select>
+    </ion-item>
+    <div class="spacer" style="width:300px;height:21px;" id="filterSort-spacer15"></div>
+    <h4 id="filterSort-heading7" style="color:#000000;">
+      Filters
+    </h4>
+    <h5 id="filterSort-heading9" style="color:#000000;">
+      Categories
+    </h5>
+    <ion-item id="filterSort-select4">
+      <ion-label stacked>
+        Sort by Category
+      </ion-label>
+      <ion-select name="category" [(ngModel)]="categoryvalue">
+        <ion-option *ngFor="let category of categories">{{category.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <!--<h5 id="filterSort-heading11" style="color:#000000;">-->
+      <!--Subscribers-->
+    <!--</h5>-->
+    <!--<ion-item>-->
+      <!--<ion-range min="10" max="100" dualKnobs="true"  step="1" color="main" name="days" [(ngModel)]="days" pin="true">-->
+
+        <!--&lt;!&ndash;<ion-label range-left color="main"><= {{days && days.lower ? days.lower : 10 }}</ion-label>&ndash;&gt;-->
+        <!--<ion-label range-left>0</ion-label>-->
+        <!--<ion-label range-right>100</ion-label>-->
+        <!--&lt;!&ndash;<ion-label range-right color="main"><= {{days && days.upper ? days.upper : 20 }}</ion-label>&ndash;&gt;-->
+      <!--</ion-range>-->
+    <!--</ion-item>-->
+  </form>
+  <button ion-button color="main" block small (click)="submitModal()">
+    Apply
+  </button>
+</ion-content>

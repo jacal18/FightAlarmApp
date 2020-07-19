@@ -1,0 +1,16 @@
+<ion-navbar>
+  <button ion-button menuToggle>
+    <ion-icon name="menu" color="dark"></ion-icon>
+  </button>
+  <ion-title>
+    {{ header }}
+  </ion-title>
+  <ion-buttons end>
+    <button ion-button icon-only (click)="goToNotifications()">
+      <ion-icon name="notifications" color="notification">
+        <!--*ngIf="n"-->
+        <ion-badge color="danger" style="font-size: 8px; padding: 3px 5px;" *ngIf="count">{{count}}</ion-badge>
+      </ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu" color="dark"></ion-icon>
+    </button>
+    <ion-title>
+      Notifications
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button class="header_text" style="font-size: 40px;">
+        {{count}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<ion-content>
+  <ion-grid *ngIf="!notifications || notifications.length < 1">
+    <ion-grid>
+      <ion-row>
+        <ion-col justify-content-start>
+          <div>
+            <p>
+              <strong>
+                You currently have no notifications to display
+              </strong>
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-grid>
+  <ion-list id="notifications-list5">
+    <ion-item-sliding *ngFor="let notification of notifications; let k = index;">
+      <ion-item color="none">
+        <img src="assets/imgs/events-combined-shape@2x.png" class="combinedshapesmall"/>
+        <div class="row">
+          <div class="col-9 left_user" text-left>
+            <div> {{ notification.title }}</div>
+            <p style="white-space: normal;">
+              {{ notification.description || notification.cdescription }}
+            </p>
+          </div>
+          <div class="col-3 not_right_user" text-right style="text-align: right;">
+            <p>{{ notification.creationdate | extractDate: 'month' }} {{ notification.creationdate | extractDate: 'day' }}</p>
+            <p style="font-weight: bold;">{{ notification.creationdate | extractDate: 'year' }}</p>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deleteNotification(notification, k)">
+          <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())" *ngIf="notifications && notifications.length < count">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
