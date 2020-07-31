@@ -3,7 +3,6 @@ User Android Version of app
 
 ## Setting up Local Environment
 1. Install Android Studio [here](https://developer.android.com/studio/install)
-2. 
 
 ## Running
 1. Follow the [link](https://abhiandroid.com/androidstudio/open-project) for android.
